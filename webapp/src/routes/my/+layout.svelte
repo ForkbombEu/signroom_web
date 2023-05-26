@@ -111,7 +111,9 @@
 			</SidebarGroup>
 		</SidebarWrapper>
 	</Sidebar>
-	<div class="bg-slate-100 grow">
-		<slot />
+	<div class="p-8 bg-slate-100 grow bg-[url('/bg.png')] bg-cover">
+		<div class="rounded-lg p-4 bg-white max-w-3xl">
+			<slot />
+		</div>
 	</div>
 </div>
