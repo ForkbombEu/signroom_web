@@ -47,6 +47,7 @@
 					<svelte:fragment slot="icon">
 						<ClipboardDocumentCheck />
 					</svelte:fragment>
+					<SidebarDropdownItem label="Sign document" href="/my/sign" />
 					<SidebarDropdownItem label="Validate signature" />
 					<SidebarDropdownItem label="Multisignature" />
 					<SidebarDropdownItem label="Zero Knowledge Proof" />
@@ -112,7 +113,7 @@
 		</SidebarWrapper>
 	</Sidebar>
 	<div class="p-8 bg-slate-100 grow bg-[url('/bg.png')] bg-cover">
-		<div class="rounded-lg p-4 bg-white max-w-3xl">
+		<div class="rounded-lg p-4 bg-white max-w-3xl flex flex-col space gap-10">
 			<slot />
 		</div>
 	</div>
