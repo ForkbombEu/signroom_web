@@ -47,6 +47,7 @@
 					<svelte:fragment slot="icon">
 						<ClipboardDocumentCheck />
 					</svelte:fragment>
+					<SidebarDropdownItem label="My signatures" href="/my/signatures" />
 					<SidebarDropdownItem label="Sign document" href="/my/sign" />
 					<SidebarDropdownItem label="Validate signature" />
 					<SidebarDropdownItem label="Multisignature" />

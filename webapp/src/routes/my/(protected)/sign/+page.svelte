@@ -1,11 +1,10 @@
 <script>
-	import { Button, Dropzone, Heading, P } from 'flowbite-svelte';
+	import PageTitle from '$lib/components/PageTitle.svelte';
+	import { Dropzone, P } from 'flowbite-svelte';
 	import { CloudArrowUp, MagnifyingGlass } from 'svelte-heros-v2';
 </script>
 
-<Heading tag="h1">Sign a PDF</Heading>
-
-<P class="text-slate-600">Upload the .pdf file that you want to sign</P>
+<PageTitle title="Sign a PDF" description="Upload the .pdf file that you want to sign" />
 
 <Dropzone id="dropzone">
 	<CloudArrowUp class="mb-3 w-10 h-10 text-gray-400" />

@@ -84,6 +84,9 @@ devDependencies:
   svelte-preprocess:
     specifier: ^5.0.3
     version: 5.0.3(postcss-load-config@4.0.1)(postcss@8.4.23)(svelte@3.59.1)(typescript@5.0.4)
+  sveltekit-superforms:
+    specifier: ^0.8.7
+    version: 0.8.7(@sveltejs/kit@1.19.0)(svelte@3.59.1)(zod@3.21.4)
   tailwindcss:
     specifier: ^3.3.2
     version: 3.3.2
@@ -99,6 +102,9 @@ devDependencies:
   vitest:
     specifier: ^0.31.1
     version: 0.31.1
+  zod:
+    specifier: ^3.21.4
+    version: 3.21.4
 
 packages:
 
@@ -2245,6 +2251,18 @@ packages:
     resolution: {integrity: sha512-pKj8fEBmqf6mq3/NfrB9SLtcJcUvjYSWyePlfCqN9gujLB25RitWK8PvFzlwim6hD/We35KbPlRteuA6rnPGcQ==}
     engines: {node: '>= 8'}
 
+  /sveltekit-superforms@0.8.7(@sveltejs/kit@1.19.0)(svelte@3.59.1)(zod@3.21.4):
+    resolution: {integrity: sha512-0aFK31TNz4AM3N7dzL99QUXlVF2O+W/TNVU+M41VVaAKtJKFNasbv8GNLd5wrhN7UWN6kNJnt4MlZBPISkIQ6w==}
+    peerDependencies:
+      '@sveltejs/kit': 1.x
+      svelte: 3.x
+      zod: 3.x
+    dependencies:
+      '@sveltejs/kit': 1.19.0(svelte@3.59.1)(vite@4.3.9)
+      svelte: 3.59.1
+      zod: 3.21.4
+    dev: true
+
   /tailwindcss@3.3.2:
     resolution: {integrity: sha512-9jPkMiIBXvPc2KywkraqsUfbfj+dHDb+JPWtSJa9MLFdrPyazI7q6WX2sUrm7R9eVR7qqv3Pas7EvQFzxKnI6w==}
     engines: {node: '>=14.0.0'}
@@ -2592,3 +2610,7 @@ packages:
   /zenroom@3.0.1:
     resolution: {integrity: sha512-wUPnUS5CR6Cclw7l7JZHK1//BNYqRCm33TArYtbd6+26hfdHKZoPGtMZOgW+ymmp7MXIZggyJtfFka3Hw8xiYg==}
     dev: false
+
+  /zod@3.21.4:
+    resolution: {integrity: sha512-m46AKbrzKVzOzs/DZgVnG5H55N1sv1M8qZU3A8RIKbs3mrACDNeIOeilDymVb2HdmP8uwshOCF4uJ8uM9rCqJw==}
+    dev: true

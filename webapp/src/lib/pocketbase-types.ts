@@ -4,6 +4,7 @@
 
 export enum Collections {
 	FeatureFlags = "featureFlags",
+	Folders = "folders",
 	Hooks = "hooks",
 	Users = "users",
 }
@@ -37,6 +38,12 @@ export type FeatureFlagsRecord = {
 	active?: boolean
 }
 
+export type FoldersRecord = {
+	owner: RecordIdString
+	name: string
+	description?: string
+}
+
 export enum HooksEventOptions {
 	"insert" = "insert",
 	"update" = "update",
@@ -63,20 +70,23 @@ export type UsersRecord = {
 }
 
 // Response types include system fields and match responses from the PocketBase API
-export type FeatureFlagsResponse = Required<FeatureFlagsRecord> & BaseSystemFields
-export type HooksResponse = Required<HooksRecord> & BaseSystemFields
-export type UsersResponse = Required<UsersRecord> & AuthSystemFields
+export type FeatureFlagsResponse = FeatureFlagsRecord & BaseSystemFields
+export type FoldersResponse<Texpand = unknown> = FoldersRecord & BaseSystemFields<Texpand>
+export type HooksResponse = HooksRecord & BaseSystemFields
+export type UsersResponse = UsersRecord & AuthSystemFields
 
 // Types containing all Records and Responses, useful for creating typing helper functions
 
 export type CollectionRecords = {
 	featureFlags: FeatureFlagsRecord
+	folders: FoldersRecord
 	hooks: HooksRecord
 	users: UsersRecord
 }
 
 export type CollectionResponses = {
 	featureFlags: FeatureFlagsResponse
+	folders: FoldersResponse
 	hooks: HooksResponse
 	users: UsersResponse
 }
