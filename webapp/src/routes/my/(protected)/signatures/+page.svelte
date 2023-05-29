@@ -10,19 +10,18 @@
 		TableBody,
 		TableBodyCell,
 		TableBodyRow,
-		// TableHead,
-		// TableHeadCell,
 		TableSearch
 	} from 'flowbite-svelte';
+	import { Folder, Pencil, Share } from 'svelte-heros-v2';
 	import { superForm } from 'sveltekit-superforms/client';
 	import type { PageData } from './$types';
-	import { Folder } from 'svelte-heros-v2';
 
 	export let data: PageData;
 
-	let createModal = false;
 	let searchTerm = '';
-	const folders = data.folders;
+
+	$: createModal = false;
+	$: folders = data.folders;
 	const form = superForm(data.form);
 
 	$: filteredItems = folders.filter(
@@ -36,23 +35,25 @@
 </div>
 <Table hoverable={true}>
 	<TableSearch placeholder="Search by folder name" hoverable={true} bind:inputValue={searchTerm}>
-		<!-- <TableHead>
-			<TableHeadCell>Name</TableHeadCell>
-			<TableHeadCell>Description</TableHeadCell>
-		</TableHead> -->
 		<TableBody>
 			{#each filteredItems as item}
 				<TableBodyRow>
 					<TableBodyCell>
 						<div class="flex items-center">
-							<Folder class="w-20 h-20 mr-2 text-slate-500" />
+							<Folder class="shrink-0 w-20 h-20 mr-2 text-slate-500" />
 							<div class="flex-col">
 								<Heading tag="h4">{item.name}</Heading>
 								<P>{item.description}</P>
 							</div>
 						</div>
 					</TableBodyCell>
-					<TableBodyCell>{item.updated}</TableBodyCell>
+					<TableBodyCell>
+						<P class="text-slate-500 text-sm">{item.updated}</P></TableBodyCell
+					>
+					<TableBodyCell>
+						<Button color="alternative" size="xs"><Pencil class="mr-2 w-4" /> Edit</Button>
+						<Button color="alternative" size="xs"><Share class="mr-2 w-4" /> Share</Button>
+					</TableBodyCell>
 				</TableBodyRow>
 			{/each}
 		</TableBody>
@@ -60,7 +61,13 @@
 </Table>
 
 <Modal id="create-modal" title="Create a new folder" bind:open={createModal}>
-	<form method="POST" use:form.enhance>
+	<form
+		method="POST"
+		use:form.enhance
+		on:submit={() => {
+			createModal = false;
+		}}
+	>
 		<div class="grid gap-6 mb-6 md:grid-cols-2">
 			<AutoTextField field="name" {form} />
 		</div>
