@@ -15,6 +15,7 @@
 		NavLi,
 		NavUl,
 		Navbar,
+		Span,
 		Textarea
 	} from 'flowbite-svelte';
 	import {
@@ -85,7 +86,11 @@
 			pClass="max-w-2xl mb-6 font-light lg:mb-8 lg:text-3xl dark:text-gray-400"
 		>
 			<svelte:fragment slot="h1">
-				<span class="text-primary-700">Sign and validate documents</span>, superfast.
+				<Span
+					gradient
+					gradientClass="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-purple-500"
+					class="text-primary-700">Sign and validate documents</Span
+				>, superfast.
 			</svelte:fragment>
 			<svelte:fragment slot="paragraph">Using technology trusted worldwide.</svelte:fragment>
 			<a href="/">

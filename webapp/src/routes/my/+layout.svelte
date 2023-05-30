@@ -66,6 +66,7 @@
 		<span>Hello, <span class="font-semibold text-primary-600">{$currentUser?.email}</span></span>
 		<Button
 			href="https://explorer.did.dyne.org/details/did:dyne:sandbox.signroom:{$currentUser?.eddsa_public_key}"
+			target="_blank"
 			size="xs"
 			class="ml-3"
 			color="light">My DID</Button
@@ -107,7 +108,11 @@
 					<svelte:fragment slot="icon">
 						<Identification />
 					</svelte:fragment>
-					<SidebarDropdownItem label="My DID" />
+					<SidebarDropdownItem
+						label="My DID"
+						href="https://explorer.did.dyne.org/details/did:dyne:sandbox.signroom:{$currentUser?.eddsa_public_key}"
+						target="_blank"
+					/>
 					<SidebarDropdownItem label="My Verifiable Credentials" />
 				</SidebarDropdownWrapper>
 				<SidebarDropdownWrapper label="Organization">
