@@ -33,6 +33,7 @@
 		WrenchScrewdriver
 	} from 'svelte-heros-v2';
 	import '../../app.postcss';
+	import FeatureFlag from '$lib/components/featureFlag.svelte';
 
 	let spanClass = 'flex-1 ml-3 whitespace-nowrap';
 	$: activeUrl = $page.url.pathname;
@@ -64,6 +65,7 @@
 	</Dropdown>
 	<div>
 		<span>Hello, <span class="font-semibold text-primary-600">{$currentUser?.email}</span></span>
+		<!-- <FeatureFlag flag="DID"> -->
 		<Button
 			href="https://explorer.did.dyne.org/details/did:dyne:sandbox.signroom:{$currentUser?.eddsa_public_key}"
 			target="_blank"
@@ -71,6 +73,7 @@
 			class="ml-3"
 			color="light">My DID</Button
 		>
+		<!-- </FeatureFlag> -->
 	</div>
 </Navbar>
 <div class="flex min-h-screen">
@@ -108,11 +111,13 @@
 					<svelte:fragment slot="icon">
 						<Identification />
 					</svelte:fragment>
+					<!-- <FeatureFlag flag="DID"> -->
 					<SidebarDropdownItem
 						label="My DID"
 						href="https://explorer.did.dyne.org/details/did:dyne:sandbox.signroom:{$currentUser?.eddsa_public_key}"
 						target="_blank"
 					/>
+					<!-- </FeatureFlag> -->
 					<SidebarDropdownItem label="My Verifiable Credentials" />
 				</SidebarDropdownWrapper>
 				<SidebarDropdownWrapper label="Organization">

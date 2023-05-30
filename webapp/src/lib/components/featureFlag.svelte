@@ -4,7 +4,7 @@
 
 	export let flag: string;
 
-	let flagRecord = $featureFlags.find((f) => f.name == flag);
+	let flagRecord = $featureFlags?.find((f) => f.name == flag);
 	if (!flagRecord) log('flagNotFound:', flag);
 </script>
 
