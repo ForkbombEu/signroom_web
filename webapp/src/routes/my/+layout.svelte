@@ -1,43 +1,81 @@
 <script lang="ts">
-	import '../../app.postcss';
 	import { page } from '$app/stores';
+	import { currentUser } from '$lib/pocketbase';
+	import { appTitle } from '$lib/strings';
+	import {
+		Avatar,
+		Button,
+		CloseButton,
+		Dropdown,
+		DropdownDivider,
+		DropdownHeader,
+		DropdownItem,
+		NavBrand,
+		NavHamburger,
+		Navbar,
+		Sidebar,
+		SidebarCta,
+		SidebarDropdownItem,
+		SidebarDropdownWrapper,
+		SidebarGroup,
+		SidebarItem,
+		SidebarWrapper
+	} from 'flowbite-svelte';
 	import {
 		ChartPie,
 		ClipboardDocumentCheck,
-		InboxArrowDown,
+		Fire,
 		Identification,
-		Wallet,
-		WrenchScrewdriver,
+		InboxArrowDown,
+		Lifebuoy,
 		UserCircle,
-		Lifebuoy
+		Wallet,
+		WrenchScrewdriver
 	} from 'svelte-heros-v2';
-	import {
-		Sidebar,
-		SidebarWrapper,
-		SidebarBrand,
-		SidebarItem,
-		SidebarGroup,
-		SidebarDropdownWrapper,
-		SidebarDropdownItem,
-		SidebarCta,
-		CloseButton
-	} from 'flowbite-svelte';
-
-	let site = {
-		name: 'Signroom',
-		href: '/',
-		img: '/logo.svg'
-	};
+	import '../../app.postcss';
 
 	let spanClass = 'flex-1 ml-3 whitespace-nowrap';
 	$: activeUrl = $page.url.pathname;
 </script>
 
+<Navbar let:hidden let:toggle fluid={true}>
+	<NavBrand href="/my" class="w-64">
+		<img src="/logo.svg" class="mr-3 h-6 sm:h-9" alt="{appTitle} Logo" />
+		<span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white"
+			>{appTitle}</span
+		>
+	</NavBrand>
+	<div class="flex items-center md:order-2 hover:cursor-pointer">
+		<Avatar id="avatar-menu" src={$currentUser?.avatar} />
+		<NavHamburger on:click={toggle} class1="w-full md:flex md:w-auto md:order-1" />
+	</div>
+	<Dropdown placement="bottom" triggeredBy="#avatar-menu">
+		<DropdownHeader>
+			<span class="block truncate text-sm font-medium">{$currentUser?.email}</span>
+		</DropdownHeader>
+		<DropdownItem href="/profile">My profile</DropdownItem>
+		<DropdownItem href="/settings">Account settings</DropdownItem>
+		<DropdownDivider />
+		<DropdownItem href="/pro" class="flex items-center"
+			><Fire class="text-red-500 mr-2 w-5" /> Go Pro</DropdownItem
+		>
+		<DropdownDivider />
+		<DropdownItem href="/logout" class="text-primary-600">Sign out</DropdownItem>
+	</Dropdown>
+	<div>
+		<span>Hello, <span class="font-semibold text-primary-600">{$currentUser?.email}</span></span>
+		<Button
+			href="https://explorer.did.dyne.org/details/did:dyne:sandbox.signroom:{$currentUser?.eddsa_public_key}"
+			size="xs"
+			class="ml-3"
+			color="light">My DID</Button
+		>
+	</div>
+</Navbar>
 <div class="flex min-h-screen">
 	<Sidebar>
 		<SidebarWrapper class="min-h-screen flex flex-col justify-between">
 			<SidebarGroup>
-				<SidebarBrand {site} />
 				<SidebarItem label="Overview" href="/my/dashboard">
 					<svelte:fragment slot="icon">
 						<ChartPie />
