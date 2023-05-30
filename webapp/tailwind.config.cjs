@@ -10,19 +10,21 @@ const config = {
 
 	theme: {
 		extend: {
+			fontFamily: {
+				sans: ['Inter Variable', 'sans-serif']
+			},
 			colors: {
-				// flowbite-svelte
 				primary: {
-					50: '#ebf5ff',
-					100: '#fff1ee',
-					200: '#ffe4de',
-					300: '#ffd5cc',
-					400: '#ffbcad',
-					500: '#fe795d',
-					600: '#ef562f',
-					700: '#eb4f27',
-					800: '#d3330a',
-					900: '#d3330a'
+					50: '#FFEDF2',
+					100: '#FFE1EA',
+					200: '#FFC2DA',
+					300: '#FC94B3',
+					400: '#F16C94',
+					500: '#E44E7B',
+					600: '#DC3768',
+					700: '#C1305B',
+					800: '#A0254A',
+					900: '#761B36'
 				}
 			}
 		}
