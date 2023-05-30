@@ -41,6 +41,8 @@ COPY --from=builder /app/pb .
 # TODO: problem with pb_data directory
 # USER $USER
 
+RUN mkdir pb_data
+
 EXPOSE 8090
 
 ENTRYPOINT ["./pb"]

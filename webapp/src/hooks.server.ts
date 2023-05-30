@@ -1,6 +1,6 @@
 import { pb } from '$lib/pocketbase';
-import { redirect, type Handle } from '@sveltejs/kit';
 import { Collections, type FeaturesResponse } from '$lib/pocketbase-types';
+import type { Handle } from '@sveltejs/kit';
 
 export const handle: Handle = async ({ event, resolve }) => {
 	pb.authStore.loadFromCookie(event.request.headers.get('cookie') || '');
@@ -14,12 +14,12 @@ export const handle: Handle = async ({ event, resolve }) => {
 
 	event.locals.pb = pb;
 	event.locals.user = structuredClone(pb.authStore.model);
-  
+
 	const features = await pb.collection(Collections.Features).getFullList<FeaturesResponse>();
 	event.locals.features = structuredClone(features);
-	
-  const response = await resolve(event);
+
+	const response = await resolve(event);
 	response.headers.set('set-cookie', pb.authStore.exportToCookie({ httpOnly: false }));
-	
-  return response;
+
+	return response;
 };

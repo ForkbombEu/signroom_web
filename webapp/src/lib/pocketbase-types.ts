@@ -3,7 +3,7 @@
 */
 
 export enum Collections {
-	FeatureFlags = "featureFlags",
+	Features = "features",
 	Folders = "folders",
 	Hooks = "hooks",
 	Users = "users",
@@ -33,9 +33,10 @@ export type AuthSystemFields<T = never> = {
 
 // Record types for each collection
 
-export type FeatureFlagsRecord = {
+export type FeaturesRecord<TenvVariables = unknown> = {
 	name: string
 	active?: boolean
+	envVariables?: null | TenvVariables
 }
 
 export type FoldersRecord = {
@@ -67,10 +68,15 @@ export type HooksRecord = {
 export type UsersRecord = {
 	name?: string
 	avatar?: string
+	bitcoin_public_key?: string
+	ecdh_public_key?: string
+	eddsa_public_key?: string
+	ethereum_address?: string
+	reflow_public_key?: string
 }
 
 // Response types include system fields and match responses from the PocketBase API
-export type FeatureFlagsResponse = FeatureFlagsRecord & BaseSystemFields
+export type FeaturesResponse<TenvVariables = unknown> = FeaturesRecord<TenvVariables> & BaseSystemFields
 export type FoldersResponse<Texpand = unknown> = FoldersRecord & BaseSystemFields<Texpand>
 export type HooksResponse = HooksRecord & BaseSystemFields
 export type UsersResponse = UsersRecord & AuthSystemFields
@@ -78,14 +84,14 @@ export type UsersResponse = UsersRecord & AuthSystemFields
 // Types containing all Records and Responses, useful for creating typing helper functions
 
 export type CollectionRecords = {
-	featureFlags: FeatureFlagsRecord
+	features: FeaturesRecord
 	folders: FoldersRecord
 	hooks: HooksRecord
 	users: UsersRecord
 }
 
 export type CollectionResponses = {
-	featureFlags: FeatureFlagsResponse
+	features: FeaturesResponse
 	folders: FoldersResponse
 	hooks: HooksResponse
 	users: UsersResponse

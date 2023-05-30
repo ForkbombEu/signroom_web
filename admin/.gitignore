@@ -3,4 +3,5 @@
 /tmp
 .DS_Store
 .env
+.envrc
 pb.env

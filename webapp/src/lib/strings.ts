@@ -1,1 +1,1 @@
-export const appTitle = 'Signroom_web';
+export const appTitle = 'SignRoom';

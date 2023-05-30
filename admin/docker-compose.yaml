@@ -16,31 +16,8 @@
 
 version: "3"
 services:
-  srv:
-    container_name: srv
-    image: pb:latest
-    build:
-      context: .
-      dockerfile: Dockerfile
-    ports:
-      - "8090:8090"
-    environment:
-      - "RESTROOM_URL=http://zvmlet:3000"
-      - "SALT=bWltbW8K"
-    env_file:
-      - pb.env
-    volumes:
-      - type: bind
-        source: ./pb_public
-        target: /app/pb_public
-      - type: bind
-        source: ./pb_migrations
-        target: /app/pb_migrations
-      - type: bind
-        source: ./pb_data
-        target: /app/pb_data
-  zvmlet:
-    container_name: zvmlet
+  restroom:
+    container_name: restoom
     image: ghcr.io/interfacerproject/zenflows-crypto:latest
     ports:
       - 3000:3000
