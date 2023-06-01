@@ -24,10 +24,6 @@ import (
 )
 
 func main() {
-	conf, err := config.NewEnv()
-	if err != nil {
-		panic(err)
-	}
 	app := pocketbase.New()
 	var publicDirFlag string
 
@@ -50,10 +46,14 @@ func main() {
 			Handler: func(c echo.Context) error {
 				var body map[string]map[string]interface{}
 
-				err := json.NewDecoder(c.Request().Body).Decode(&body)
+				conf, err := config.FetchKeypairoomConfig(app)
 				if err != nil {
 					return err
+				}
 
+				err = json.NewDecoder(c.Request().Body).Decode(&body)
+				if err != nil {
+					return err
 				}
 				hmac, err := zencode.KeypairoomServer(conf, body["userData"])
 				if err != nil {
@@ -74,6 +74,12 @@ func main() {
 				if authRecord == nil {
 					return apis.NewForbiddenError("Only auth records can access this endpoint", nil)
 				}
+
+				conf, err := config.FetchDidConfig(app)
+				if err != nil {
+					return err
+				}
+
 				did, err := did.ClaimDid(conf, &did.DidAgent{
 					BitcoinPublicKey: authRecord.Get("bitcoin_public_key").(string),
 					EcdhPublicKey:    authRecord.Get("ecdh_public_key").(string),

@@ -1,10 +1,10 @@
 <script lang="ts">
 	import '@fontsource-variable/inter';
 	import '../app.postcss';
-	import { featureFlags } from '$lib/pocketbase';
+	import { features } from '$lib/pocketbase';
 
 	export let data;
-	$featureFlags = data.featureFlags;
+	$features = data.features;
 </script>
 
 <slot />

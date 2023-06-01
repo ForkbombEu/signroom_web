@@ -6,4 +6,4 @@ import type { FeaturesResponse } from './pocketbase-types';
 export const pb = new PocketBase(PUBLIC_POCKETBASE_URL);
 
 export const currentUser = writable(pb.authStore.model);
-export const featureFlags = writable<Array<FeaturesResponse>>([]);
+export const features = writable<Array<FeaturesResponse>>([]);

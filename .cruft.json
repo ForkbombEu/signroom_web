@@ -1,6 +1,6 @@
 {
   "template": "https://github.com/dyne/starters",
-  "commit": "3d53434876211fb92c4cb54002c731b336f395c8",
+  "commit": "ff87007cd878dfb2b39e78d2490647387fbeb6b9",
   "checkout": null,
   "context": {
     "cookiecutter": {
@@ -8,6 +8,8 @@
       "project_description": "Electronic signature service based on Zenroom",
       "full_name": "Puria Nafisi Azizi",
       "email": "puria@dyne.org",
+      "project_slug": "signroom_web",
+      "repo": "https://github.com/dyne/signroom_web",
       "_copy_without_render": [
         "*.svelte"
       ],
