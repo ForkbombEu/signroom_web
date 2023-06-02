@@ -11,7 +11,6 @@ import (
 	"pb/config"
 	"pb/did"
 	"pb/hooks"
-	_ "pb/migrations"
 	"pb/zencode"
 
 	"github.com/labstack/echo/v5"
