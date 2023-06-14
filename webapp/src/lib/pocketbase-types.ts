@@ -6,6 +6,7 @@ export enum Collections {
 	Features = "features",
 	Folders = "folders",
 	Hooks = "hooks",
+	Signatures = "signatures",
 	Users = "users",
 }
 
@@ -43,6 +44,7 @@ export type FoldersRecord = {
 	owner: RecordIdString
 	name: string
 	description?: string
+	signatures?: RecordIdString[]
 }
 
 export enum HooksEventOptions {
@@ -65,6 +67,18 @@ export type HooksRecord = {
 	disabled?: boolean
 }
 
+export enum SignaturesTypeOptions {
+	"pdf" = "pdf",
+	"xml" = "xml",
+	"json" = "json",
+}
+export type SignaturesRecord = {
+	title: string
+	owner: RecordIdString
+	folders?: RecordIdString
+	type: SignaturesTypeOptions
+}
+
 export type UsersRecord = {
 	name?: string
 	avatar?: string
@@ -79,6 +93,7 @@ export type UsersRecord = {
 export type FeaturesResponse<TenvVariables = unknown> = Required<FeaturesRecord<TenvVariables>> & BaseSystemFields
 export type FoldersResponse<Texpand = unknown> = Required<FoldersRecord> & BaseSystemFields<Texpand>
 export type HooksResponse = Required<HooksRecord> & BaseSystemFields
+export type SignaturesResponse<Texpand = unknown> = Required<SignaturesRecord> & BaseSystemFields<Texpand>
 export type UsersResponse = Required<UsersRecord> & AuthSystemFields
 
 // Types containing all Records and Responses, useful for creating typing helper functions
@@ -87,6 +102,7 @@ export type CollectionRecords = {
 	features: FeaturesRecord
 	folders: FoldersRecord
 	hooks: HooksRecord
+	signatures: SignaturesRecord
 	users: UsersRecord
 }
 
@@ -94,5 +110,6 @@ export type CollectionResponses = {
 	features: FeaturesResponse
 	folders: FoldersResponse
 	hooks: HooksResponse
+	signatures: SignaturesResponse
 	users: UsersResponse
 }

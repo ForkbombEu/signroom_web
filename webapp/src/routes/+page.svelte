@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { goto } from '$app/navigation';
+	import { currentUser } from '$lib/pocketbase';
 	import { appTitle } from '$lib/strings';
 	import {
 		Button,
@@ -45,6 +47,8 @@
 	} from 'svelte-heros-v2';
 	let navClass = 'bg-white border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-800';
 	let navDivClass = 'flex flex-wrap justify-between items-center mx-auto max-w-screen-xl';
+	// if ($currentUser)
+	// 	goto('/my')
 </script>
 
 <div class="flex flex-col gap-20">
@@ -81,6 +85,7 @@
 	</header>
 
 	<Section>
+		{@debug $currentUser}
 		<HeroHeader
 			h1Class="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white"
 			pClass="max-w-2xl mb-6 font-light lg:mb-8 lg:text-3xl dark:text-gray-400"

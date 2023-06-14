@@ -5,8 +5,10 @@
 	export let description: string;
 </script>
 
-<Heading tag="h1">{title}</Heading>
-
-<hr />
-
-<P class="text-slate-600 mb-4">{description}</P>
+<div class="flex w-full justify-between items-center">
+	<div>
+		<Heading tag="h2">{title}</Heading>
+		<P class="text-slate-600 pt-6">{description}</P>
+	</div>
+	<slot name="actions" />
+</div>
