@@ -76,10 +76,10 @@ export type UsersRecord = {
 }
 
 // Response types include system fields and match responses from the PocketBase API
-export type FeaturesResponse<TenvVariables = unknown> = FeaturesRecord<TenvVariables> & BaseSystemFields
-export type FoldersResponse<Texpand = unknown> = FoldersRecord & BaseSystemFields<Texpand>
-export type HooksResponse = HooksRecord & BaseSystemFields
-export type UsersResponse = UsersRecord & AuthSystemFields
+export type FeaturesResponse<TenvVariables = unknown> = Required<FeaturesRecord<TenvVariables>> & BaseSystemFields
+export type FoldersResponse<Texpand = unknown> = Required<FoldersRecord> & BaseSystemFields<Texpand>
+export type HooksResponse = Required<HooksRecord> & BaseSystemFields
+export type UsersResponse = Required<UsersRecord> & AuthSystemFields
 
 // Types containing all Records and Responses, useful for creating typing helper functions
 
