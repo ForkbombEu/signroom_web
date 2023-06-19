@@ -6,11 +6,11 @@ Electronic signature service based on Zenroom
 
 ## Setup
 
-### Backend
+### Admin control panel
 
 1. `cd admin && go build`
 
-### Frontend
+### Frontend application
 
 1. `cd webapp && pnpm i`
 
@@ -18,14 +18,14 @@ Electronic signature service based on Zenroom
 
 ## Usage
 
-### Backend
+### Admin control panel
 
 ```
 cd admin
 ./pb serve
 ```
 
-### Frontend
+### Frontend application
 
 ```
 cd webapp
