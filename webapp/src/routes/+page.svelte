@@ -108,45 +108,15 @@
 		</HeroHeader>
 	</Section>
 
-	<Section name="contentwithimg">
-		<ContentWithImage>
-			<svelte:fragment slot="h2">We did reinvent the wheel</svelte:fragment>
-			<p class="mb-4">
-				We are strategists, designers and developers. Innovators and problem solvers. Small enough
-				to be simple and quick, but big enough to deliver the scope you want at the pace you need.
-				Small enough to be simple and quick, but big enough to deliver the scope you want at the
-				pace you need.
-			</p>
-			<p>
-				We are strategists, designers and developers. Innovators and problem solvers. Small enough
-				to be simple and quick.
-			</p>
-
-			<svelte:fragment slot="image">
-				<img
-					class="w-full rounded-lg"
-					src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-2.png"
-					alt="office content 1"
-				/>
-				<img
-					class="mt-4 w-full lg:mt-10 rounded-lg"
-					src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-1.png"
-					alt="office content 2"
-				/>
-			</svelte:fragment>
-		</ContentWithImage>
-	</Section>
-
 	<Section name="feature">
 		<HeroHeader
 			class="max-w-screen-md mb-8 lg:mb-16"
 			h2Class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white"
 			pClass="text-gray-500 sm:text-xl dark:text-gray-400"
 		>
-		<svelte:fragment slot="h2">We are working for you! Come back soon or write us at <a href="mailto:info@forkbomb.eu">info@forkbomb.eu</a></svelte:fragment>
-				>Here at {appTitle} we focus on markets where technology, innovation, and capital can unlock
-				long-term value and drive economic growth.</svelte:fragment
-			>
+		<svelte:fragment slot="h2">
+			We are working for you! Come back soon or write us at <a href="mailto:info@forkbomb.eu">info@forkbomb.eu</a>
+		</svelte:fragment>
 		</HeroHeader>
 	</Section>
 
