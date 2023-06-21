@@ -76,7 +76,6 @@
 				nonActiveClass="text-gray-500 hover:text-primary-700 dark:text-gray-400 dark:hover:text-primary-300"
 			>
 				<NavLi href="/" active={true}>Signatures</NavLi>
-				<NavLi href="#pricing">Pricing</NavLi>
 				<NavLi href="#contact">Contact</NavLi>
 			</NavUl>
 		</Navbar>
@@ -144,160 +143,13 @@
 			h2Class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white"
 			pClass="text-gray-500 sm:text-xl dark:text-gray-400"
 		>
-			<svelte:fragment slot="h2">Designed for business teams like yours</svelte:fragment>
-			<svelte:fragment slot="paragraph"
+		<svelte:fragment slot="h2">We are working for you! Come back soon or write us at <a href="mailto:info@forkbomb.eu">info@forkbomb.eu</a></svelte:fragment>
 				>Here at {appTitle} we focus on markets where technology, innovation, and capital can unlock
 				long-term value and drive economic growth.</svelte:fragment
 			>
 		</HeroHeader>
-		<FeatureDefault>
-			<FeatureItem>
-				<svelte:fragment slot="icon"
-					><PresentationChartLine
-						class="w-5 h-5 text-primary-600 lg:w-6 lg:h-6 dark:text-primary-300"
-					/></svelte:fragment
-				>
-				<svelte:fragment slot="h3">Marketing</svelte:fragment>
-				<svelte:fragment slot="paragraph"
-					>Plan it, create it, launch it. Collaborate seamlessly with all the organization and hit
-					your marketing goals every month with our marketing plan.</svelte:fragment
-				>
-			</FeatureItem>
-			<FeatureItem>
-				<svelte:fragment slot="icon"
-					><AcademicCap
-						class="w-5 h-5 text-primary-600 lg:w-6 lg:h-6 dark:text-primary-300"
-					/></svelte:fragment
-				>
-				<svelte:fragment slot="h3">Legal</svelte:fragment>
-				<svelte:fragment slot="paragraph"
-					>Protect your organization, devices and stay compliant with our structured workflows and
-					custom permissions made for you.</svelte:fragment
-				>
-			</FeatureItem>
-			<FeatureItem>
-				<svelte:fragment slot="icon"
-					><Briefcase
-						class="w-5 h-5 text-primary-600 lg:w-6 lg:h-6 dark:text-primary-300"
-					/></svelte:fragment
-				>
-				<svelte:fragment slot="h3">Business Automation</svelte:fragment>
-				<svelte:fragment slot="paragraph"
-					>Auto-assign tasks, send Slack messages, and much more. Now power up with hundreds of new
-					templates to help you get started.</svelte:fragment
-				>
-			</FeatureItem>
-			<FeatureItem>
-				<svelte:fragment slot="icon"
-					><CurrencyDollar
-						class="w-5 h-5 text-primary-600 lg:w-6 lg:h-6 dark:text-primary-300"
-					/></svelte:fragment
-				>
-				<svelte:fragment slot="h3">Finance</svelte:fragment>
-				<svelte:fragment slot="paragraph"
-					>Audit-proof software built for critical financial operations like month-end close and
-					quarterly budgeting.</svelte:fragment
-				>
-			</FeatureItem>
-			<FeatureItem>
-				<svelte:fragment slot="icon"
-					><Bolt
-						class="w-5 h-5 text-primary-600 lg:w-6 lg:h-6 dark:text-primary-300"
-					/></svelte:fragment
-				>
-				<svelte:fragment slot="h3">Enterprise Design</svelte:fragment>
-				<svelte:fragment slot="paragraph"
-					>Craft beautiful, delightful experiences for both marketing and product with real
-					cross-company collaboration.</svelte:fragment
-				>
-			</FeatureItem>
-			<FeatureItem>
-				<svelte:fragment slot="icon"
-					><Cog
-						class="w-5 h-5 text-primary-600 lg:w-6 lg:h-6 dark:text-primary-300"
-					/></svelte:fragment
-				>
-				<svelte:fragment slot="h3">Operations</svelte:fragment>
-				<svelte:fragment slot="paragraph"
-					>Keep your company’s lights on with customizable, iterative, and structured workflows
-					built for all efficient teams and individual.</svelte:fragment
-				>
-			</FeatureItem>
-		</FeatureDefault>
 	</Section>
 
 
 	<!-- svelte-ignore missing-declaration -->
-	<Section>
-		<Footer footerType="socialmedia">
-			<div class="grid gap-12 lg:grid-cols-6 lg:gap-24">
-				<div class="col-span-2">
-					<FooterBrand
-						href="/"
-						src="/logo.svg"
-						alt={`${appTitle} Logo`}
-						name=""
-						aClass="flex mb-6"
-					/>
-					<p class="text-gray-600 dark:text-gray-400">
-						{appTitle} is an ecosystem built on top of Tailwind CSS including a component library, block
-						sections, a Figma design system and other resources.
-					</p>
-				</div>
-				<div>
-					<h2 class="mb-6 text-sm font-semibold text-gray-400 uppercase dark:text-white">
-						Resources
-					</h2>
-					<FooterLinkGroup>
-						<FooterLink liClass="mb-4" href="/">{appTitle}</FooterLink>
-						<FooterLink liClass="mb-4" href="https://tailwindcss.com/">Tailwind CSS</FooterLink>
-						<FooterLink liClass="mb-4" href="https://flowbite-svelte.com/"
-							>{appTitle}-Svelte</FooterLink
-						>
-					</FooterLinkGroup>
-				</div>
-				<div>
-					<h2 class="mb-6 text-sm font-semibold text-gray-400 uppercase dark:text-white">
-						HELP & SUPPORT
-					</h2>
-					<FooterLinkGroup>
-						<FooterLink liClass="mb-4" href="https://discord.gg/4eeurUVvTy">Discord</FooterLink>
-						<FooterLink
-							liClass="mb-4"
-							href="https://github.com/shinokada/flowbite-svelte-blocks/issues">GitHub</FooterLink
-						>
-					</FooterLinkGroup>
-				</div>
-				<div>
-					<h2 class="mb-6 text-sm font-semibold text-gray-400 uppercase dark:text-white">
-						Follow us
-					</h2>
-					<FooterLinkGroup>
-						<FooterLink liClass="mb-4" href="https://github.com/shinokada/flowbite-svelte-blocks"
-							>Gihub</FooterLink
-						>
-						<FooterLink liClass="mb-4" href="https://discord.gg/4eeurUVvTy">Discord</FooterLink>
-					</FooterLinkGroup>
-				</div>
-				<div>
-					<h2 class="mb-6 text-sm font-semibold text-gray-400 uppercase dark:text-white">Legal</h2>
-					<FooterLinkGroup>
-						<FooterLink
-							liClass="mb-4"
-							href="https://github.com/shinokada/flowbite-svelte-blocks/LICENSE">LICENSE</FooterLink
-						>
-					</FooterLinkGroup>
-				</div>
-			</div>
-			<hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
-			<div class="sm:flex sm:items-center sm:justify-between">
-				<FooterCopyright href="/" by={appTitle} />
-				<div class="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
-					<FooterIcon href="/" class="text-gray-400 hover:text-gray-900" icon={Facebook} />
-					<FooterIcon href="/" class="text-gray-400 hover:text-gray-900" icon={Twitter} />
-					<FooterIcon href="/" class="text-gray-400 hover:text-gray-900" icon={Github} />
-				</div>
-			</div>
-		</Footer>
-	</Section>
 </div>
