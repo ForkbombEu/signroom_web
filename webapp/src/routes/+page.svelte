@@ -47,8 +47,6 @@
 	} from 'svelte-heros-v2';
 	let navClass = 'bg-white border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-800';
 	let navDivClass = 'flex flex-wrap justify-between items-center mx-auto max-w-screen-xl';
-	// if ($currentUser)
-	// 	goto('/my')
 </script>
 
 <div class="flex flex-col gap-20">
@@ -63,7 +61,7 @@
 			<div class="flex items-center lg:order-2">
 				<a href="/login">Log In</a>
 				<Button class="ml-4 inline-flex items-center justify-center mr-3" href="/register">
-					Get started<ArrowRight size="18" class="ml-2 -mr-1" />
+					Register <ArrowRight size="18" class="ml-2 -mr-1" />
 				</Button>
 				<NavHamburger
 					on:click={toggle}
@@ -85,7 +83,6 @@
 	</header>
 
 	<Section>
-		{@debug $currentUser}
 		<HeroHeader
 			h1Class="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white"
 			pClass="max-w-2xl mb-6 font-light lg:mb-8 lg:text-3xl dark:text-gray-400"
@@ -101,7 +98,7 @@
 			<svelte:fragment slot="paragraph">Using technology trusted worldwide.</svelte:fragment>
 			<a href="/">
 				<Button class="inline-flex items-center justify-center mr-3" href="/register">
-					Get started<ArrowRight size="18" class="ml-2 -mr-1" />
+					Register <ArrowRight size="18" class="ml-2 -mr-1" />
 				</Button>
 			</a>
 			<a href="/">
@@ -140,120 +137,6 @@
 			</svelte:fragment>
 		</ContentWithImage>
 	</Section>
-	<div id="pricing">
-		<Section name="pricing" id="pricing">
-			<PricingHead>
-				<svelte:fragment slot="h2">Designed for business teams like yours</svelte:fragment>
-				<svelte:fragment slot="paragraph"
-					>Here at {appTitle} we focus on markets where technology, innovation, and capital can unlock
-					long-term value and drive economic growth.</svelte:fragment
-				>
-			</PricingHead>
-			<div class="space-y-8 lg:grid lg:grid-cols-3 sm:gap-6 xl:gap-10 lg:space-y-0">
-				<PricingCard>
-					<PricingBodyHead>
-						<svelte:fragment slot="h3">Starter</svelte:fragment>
-						<svelte:fragment slot="paragraph">
-							Best option for personal use & for your next project.
-						</svelte:fragment>
-						<svelte:fragment slot="price">
-							<span class="mr-2 text-5xl font-extrabold">$29</span>
-							<span class="text-gray-500 dark:text-gray-400">/month</span>
-						</svelte:fragment>
-					</PricingBodyHead>
-					<PricingItemWrapper>
-						<PricingItem>
-							<span>Individual configuration</span>
-						</PricingItem>
-						<PricingItem>
-							<span>No setup, or hidden fees</span>
-						</PricingItem>
-						<PricingItem>
-							<span>Team size: <span class="font-semibold">1 developer</span></span>
-						</PricingItem>
-						<PricingItem>
-							<span>Premium support: <span class="font-semibold">6 months</span></span>
-						</PricingItem>
-						<PricingItem>
-							<span>Free updates: <span class="font-semibold">6 months</span></span>
-						</PricingItem>
-
-						<svelte:fragment slot="btn">
-							<Button>Get started</Button>
-						</svelte:fragment>
-					</PricingItemWrapper>
-				</PricingCard>
-
-				<PricingCard>
-					<PricingBodyHead>
-						<svelte:fragment slot="h3">Company</svelte:fragment>
-						<svelte:fragment slot="paragraph">
-							Relevant for multiple users, extended & premium support.
-						</svelte:fragment>
-						<svelte:fragment slot="price">
-							<span class="mr-2 text-5xl font-extrabold">$99</span>
-							<span class="text-gray-500 dark:text-gray-400">/month</span>
-						</svelte:fragment>
-					</PricingBodyHead>
-					<PricingItemWrapper>
-						<PricingItem>
-							<span>Individual configuration</span>
-						</PricingItem>
-						<PricingItem>
-							<span>No setup, or hidden fees</span>
-						</PricingItem>
-						<PricingItem>
-							<span>Team size: <span class="font-semibold">10 developer</span></span>
-						</PricingItem>
-						<PricingItem>
-							<span>Premium support: <span class="font-semibold">24 months</span></span>
-						</PricingItem>
-						<PricingItem>
-							<span>Free updates: <span class="font-semibold">24 months</span></span>
-						</PricingItem>
-
-						<svelte:fragment slot="btn">
-							<Button>Get started</Button>
-						</svelte:fragment>
-					</PricingItemWrapper>
-				</PricingCard>
-
-				<PricingCard>
-					<PricingBodyHead>
-						<svelte:fragment slot="h3">Enterprise</svelte:fragment>
-						<svelte:fragment slot="paragraph">
-							Best for large scale uses and extended redistribution rights.
-						</svelte:fragment>
-						<svelte:fragment slot="price">
-							<span class="mr-2 text-5xl font-extrabold">$499</span>
-							<span class="text-gray-500 dark:text-gray-400">/month</span>
-						</svelte:fragment>
-					</PricingBodyHead>
-					<PricingItemWrapper>
-						<PricingItem>
-							<span>Individual configuration</span>
-						</PricingItem>
-						<PricingItem>
-							<span>No setup, or hidden fees</span>
-						</PricingItem>
-						<PricingItem>
-							<span>Team size: <span class="font-semibold">100+ developer</span></span>
-						</PricingItem>
-						<PricingItem>
-							<span>Premium support: <span class="font-semibold">36 months</span></span>
-						</PricingItem>
-						<PricingItem>
-							<span>Free updates: <span class="font-semibold">36 months</span></span>
-						</PricingItem>
-
-						<svelte:fragment slot="btn">
-							<Button>Get started</Button>
-						</svelte:fragment>
-					</PricingItemWrapper>
-				</PricingCard>
-			</div>
-		</Section>
-	</div>
 
 	<Section name="feature">
 		<HeroHeader
@@ -343,41 +226,6 @@
 		</FeatureDefault>
 	</Section>
 
-	<div id="contact">
-		<Section name="contact">
-			<Contact>
-				<svelte:fragment slot="h2">Contact Us</svelte:fragment>
-				<svelte:fragment slot="paragraph">
-					Got a technical issue? Want to send feedback about a beta feature? Need details about our
-					Business plan? Let us know.
-				</svelte:fragment>
-				<form class="space-y-8">
-					<div>
-						<Label for="email" class="block mb-2">Your email</Label>
-						<Input id="email" name="email" placeholder={`name@${appTitle}.com`} required />
-					</div>
-					<div>
-						<Label for="subject" class="block mb-2">Subject</Label>
-						<Input
-							id="subject"
-							name="subject"
-							placeholder="Let us know how we can help you"
-							required
-						/>
-					</div>
-					<div>
-						<Textarea
-							id="subject"
-							name="subject"
-							placeholder="Leave a comment..."
-							label="Your message"
-						/>
-					</div>
-					<Button>Send message</Button>
-				</form>
-			</Contact>
-		</Section>
-	</div>
 
 	<!-- svelte-ignore missing-declaration -->
 	<Section>
